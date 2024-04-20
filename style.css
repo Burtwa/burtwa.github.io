@@ -1,23 +1,43 @@
 * {
     font-family: Poppins;
     color: #1D1D1F;
-    text-align: center;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
 
+body {
+    max-width: 1500px;
+    margin: 0 auto;  /* Centers the text block */
+}
+
 nav {
     padding: 30px;
+    display: flex;        /* Enable flexbox for easy alignment */
+    justify-content: space-between; /* Aligns to the LEFT and RIGHT */
+    align-items: center;  
+    position: sticky;  
+    top: 0 !important;
 }
 
 .nav {
     padding: 0px 10px;
 }
 
+.navcontainer {
+    background-color: #F5F5F7;
+    max-width: 225px;
+    border-radius: 28px;
+    padding: 10px;
+}
+
 .nav:hover {
     color: #27CCC0;
+}
+
+main {
+    text-align: center;
 }
 
 .intro {
