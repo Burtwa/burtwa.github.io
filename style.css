@@ -8,7 +8,7 @@
 }
 
 body {
-    max-width: 1500px;
+    max-width: 1280px;
     margin: 0 auto;  /* Centers the text block */
 }
 
@@ -18,7 +18,7 @@ nav {
     justify-content: space-between; /* Aligns to the LEFT and RIGHT */
     align-items: center;  
     position: sticky;  
-    top: 0 !important;
+    top: 0;
 }
 
 .nav {
@@ -55,6 +55,14 @@ a {
 
 h1 {
     padding: 10px 0px 0px 0px;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.title2 {
+    font-size: 30px;
 }
 
 h2 {
@@ -121,4 +129,6 @@ ul > li {
 
 footer {
     padding: 30px;
+    text-align: center;
+
 }
