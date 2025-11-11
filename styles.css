@@ -9,6 +9,7 @@
 :root {
   --primary-color: #333; /* Used for dark text and footer background */
   --secondary-color: #666; /* Used for secondary text */
+  --highlight-color: #007aff; /* Added the missing highlight color */
   --background-color: #f5f8fd; /* Light background */
   /* Re-defining base colors used in the original CSS for clarity, assuming they are related to primary/secondary */
   --base-800: var(--primary-color); 
@@ -376,12 +377,21 @@ h3 {
 }
 
 
-/* Work Experience Card Styles */
+/* Work Experience Card Styles (MODIFIED) */
 .work-experience .jobs article {
   padding: 30px;
   background-color: white;
   border-radius: 30px;
   flex: 1;
+  /* Initial state for the hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-experience .jobs article:hover {
+  /* Apply jump and zoom effect */
+  transform: translateY(-5px) scale(1.02); /* Combined lift and 1.02 zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .work-experience .jobs article h3 {
@@ -397,6 +407,7 @@ h3 {
 
 .work-experience .jobs article p {
   margin-bottom: 10px;
+  color: var(--secondary-color);
 }
 
 .work-experience .jobs article figure {
@@ -435,15 +446,10 @@ h3 {
   visibility: visible;
 }
 
-.work-experience .jobs article figure:hover img {
+/* Original work-experience image zoom, now removed as it conflicts with article zoom */
+/* .work-experience .jobs article figure:hover img {
   transform: scale(1.2);
-}
-
-.work-experience .jobs article p {
-  color: var(--secondary-color);
-
-}
-
+} */
 
 @media (max-width: 1024px) {
   .work-experience .jobs {
@@ -451,7 +457,7 @@ h3 {
   }
 }
 
-/* Education Section Styling */
+/* Education Section Styling (MODIFIED) */
 .education .jobs article {
   padding: 30px;
   background-color: white;
@@ -461,7 +467,8 @@ h3 {
 }
 
 .education .jobs article:hover {
-  transform: translateY(-5px);
+  /* Apply jump and zoom effect */
+  transform: translateY(-5px) scale(1.02); /* Combined lift and 1.02 zoom */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
@@ -474,14 +481,12 @@ h3 {
 
 .education .jobs article > div {
   font-weight: 500;
-  color: var(--highlight-color);
   margin-bottom: 15px;
   font-size: 1em;
 }
 
 .education .jobs article p {
   color: var(--secondary-color);
-
 }
 
 /* Image Transitions (General) */
@@ -489,6 +494,11 @@ img {
   transition: transform 0.3s;
 }
 
+/* This is the base zoom effect you wanted to replicate (1.05)
+   I've slightly reduced the article zoom to 1.02 when combined with the lift, 
+   as a full 1.05 scale can often look too dramatic on large block elements.
+   If you want a stronger article zoom, change 1.02 to 1.05 in the :hover rules above.
+*/
 img:hover {
   transform: scale(1.05);
 }
